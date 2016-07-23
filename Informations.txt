@@ -1,0 +1,27 @@
+http://alexandreomiranda.com/blog/?p=97
+http://www.penihel.com/post/ASPNET5-AppExemplo
+
+0- UI - Presentation - MVC
+	+ Controllers
+	+ ViewModels
+ 	+ Views
+1- Services
+2- Application
+	- Class Library (Application)
+		+ Entities
+		+ Interfaces
+3- Domain
+	- Class Library (Domain)
+		+ Entities
+		+ Enum
+		+ Interfaces
+		+ Services		
+		+ Specifications
+		+ Validations
+4- Infrastructure(Infra.Data)
+	+4.1- Data
+		+ Context
+		+ EntityConfig
+		+ Migrations
+		+ Repositories
+	
