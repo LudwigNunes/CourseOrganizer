@@ -2,9 +2,10 @@ http://alexandreomiranda.com/blog/?p=97
 http://www.penihel.com/post/ASPNET5-AppExemplo
 
 0- UI - Presentation - MVC
-	+ Controllers
-	+ ViewModels
- 	+ Views
+	- Asp.Net Web Application (MVC)
+		+ Controllers
+		+ ViewModels
+		+ Views
 1- Services
 2- Application
 	- Class Library (Application)
@@ -18,8 +19,12 @@ http://www.penihel.com/post/ASPNET5-AppExemplo
 		+ Services		
 		+ Specifications
 		+ Validations
-4- Infrastructure(Infra.Data)
+4- Infrastructure
+	[Install-Package EntityFramework]
+	{Enable-Migrations}
+	{Update-Database -Verbose}
 	+4.1- Data
+	- Class Library (Infra.Data)
 		+ Context
 		+ EntityConfig
 		+ Migrations

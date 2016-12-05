@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3B8B05C8-1DB0-421B-95DD-B8159284C9FF}</ProjectGuid>
+    <ProjectGuid>{37E3863C-E7DC-4181-AA59-91BACEA4486B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CourseOrganizer.Domain</RootNamespace>
-    <AssemblyName>CourseOrganizer.Domain</AssemblyName>
+    <RootNamespace>CourseOrganizer.Infra.Data</RootNamespace>
+    <AssemblyName>CourseOrganizer.Infra.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,25 +30,42 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Course.cs" />
-    <Compile Include="Entities\Department.cs" />
-    <Compile Include="Entities\Instructor.cs" />
-    <Compile Include="Entities\Program.cs" />
-    <Compile Include="Enum\Type.cs" />
-    <Compile Include="Interfaces\Repositories\ICourseRepository.cs" />
-    <Compile Include="Interfaces\Repositories\IDepartmentRepository.cs" />
-    <Compile Include="Interfaces\Repositories\IInstructorRepository.cs" />
-    <Compile Include="Interfaces\Repositories\IProgramRepository.cs" />
-    <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
+    <Compile Include="Context\CourseOrganizerContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
-    <Folder Include="Specifications\" />
-    <Folder Include="Validations\" />
+    <Folder Include="EntityConfig\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CourseOrganizer.Domain\CourseOrganizer.Domain.csproj">
+      <Project>{3b8b05c8-1db0-421b-95dd-b8159284c9ff}</Project>
+      <Name>CourseOrganizer.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
